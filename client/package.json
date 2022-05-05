@@ -1,0 +1,8 @@
+{
+  "name": "gridracing-client",
+  "version": "0.1.0",
+  "description": "A browser racing game with multiplayer feature.",
+  "main": "index.js",
+  "author": "Mikhail Eremeev",
+  "license": "MIT"
+}
