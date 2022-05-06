@@ -4,7 +4,8 @@
   "description": "A browser racing game with multiplayer feature.",
   "author": "Mikhail Eremeev",
   "dependencies": {
-    "phaser": "^3.55.2"
+    "phaser": "^3.55.2",
+    "socket.io-client": "^4.5.0"
   },
   "devDependencies": {
     "@webpack-cli/generators": "^2.4.2",

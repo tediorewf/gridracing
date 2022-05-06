@@ -16,15 +16,12 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'index.html',
+            favicon: 'favicon.ico',
         }),
         new CopyPlugin({
             patterns: [
                 {
-                  from: path.resolve(__dirname, 'assets/**/*'),
-                  to: path.resolve(__dirname, 'dist')
-                },
-                {
-                    from: path.resolve(__dirname, 'public/**/*'),
+                    from: path.resolve(__dirname, 'assets/**/*'),
                     to: path.resolve(__dirname, 'dist')
                 },
             ],
