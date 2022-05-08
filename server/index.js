@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
     socket.emit('setId');
 
     cars.forEach((car, id) => {
-        console.log(`Transmit car for client ${id}: x=${car.x}, y=${car.y}, angle=${car.angle}`)
+        console.log(`Transmit car for client ${id}: x=${car.x}, y=${car.y}, angle=${car.angle}`);
         socket.emit('spawnCar', id, car.x, car.y, car.angle);
     });
 
