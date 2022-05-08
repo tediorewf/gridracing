@@ -38,10 +38,6 @@ export default class GridScene extends Phaser.Scene {
         this.me = null;
         this.myId = null;
 
-        this.socket.on('connect', () => {
-            console.log('Connect!');
-        });
-
         this.socket.on('setId', () => {
             console.log(`set id! ${self.socket.id}`);
             self.myId = self.socket.id;
