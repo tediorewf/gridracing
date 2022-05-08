@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -25,6 +26,10 @@ const config = {
                     to: path.resolve(__dirname, 'dist')
                 },
             ],
+        }),
+        new Dotenv({
+            path: './.env',
+            safe: true,
         }),
     ],
 };
