@@ -6,6 +6,8 @@ const xDefault = 1,
       yDefault = 1,
       angleDefault = 0;
 
+const xFinishPos = 23, yFinishPos = 16;
+
 class Car {
     constructor(x, y, angle) {
         this.x = x;
@@ -17,6 +19,13 @@ class Car {
         this.x = x;
         this.y = y;
         this.angle = angle;
+    }
+
+    hasReachedFinish() {
+        const hasReachedXFinishPos = this.x === xFinishPos;
+        const hasReachedYFinishPos = this.y === yFinishPos;
+        const hasFinished = hasReachedXFinishPos && hasReachedYFinishPos;
+        return hasFinished;
     }
 
     static spawn() {
@@ -55,6 +64,9 @@ io.on('connection', (socket) => {
         car.move(x, y, angle);
         console.log(`Client ${socket.id} has moved his car: x=${x}, y=${y}, angle=${angle}`);
         io.emit('moveCar', socket.id, x, y, angle);
+        if (car.hasReachedFinish()) {
+            io.emit('hasReachedFinish', (socket.id));
+        }
     });
 
     socket.on('disconnect', (reason) => {
