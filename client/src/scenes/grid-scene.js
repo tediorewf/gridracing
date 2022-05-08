@@ -32,7 +32,7 @@ export default class GridScene extends Phaser.Scene {
 
         const self = this;
 
-        const server_uri = 'http://127.0.0.1:3000';
+        const server_uri = process.env.SERVER_URI;
         this.socket = io(server_uri);
 
         this.me = null;
