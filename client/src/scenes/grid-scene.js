@@ -50,6 +50,11 @@ export default class GridScene extends Phaser.Scene {
             self.players.clear();
         });
 
+        this.socket.on('hasReachedFinish', (id) => {
+            const message = self.myId === id ? 'You have FINISHED the race!' : 'You have LOST the race :(';
+            alert(message)
+        });
+
         this.socket.on('spawnCar', (id, x, y, angle) => {
             let asset = self.add.image(
                 tileWidth*x + xCenterOffset, 
