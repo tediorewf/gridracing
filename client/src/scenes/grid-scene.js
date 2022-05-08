@@ -47,6 +47,14 @@ export default class GridScene extends Phaser.Scene {
             self.myId = self.socket.id;
         });
 
+        this.socket.on('connect_error', (err) => {
+            alert(`Connection error occured: ${err.message}`);
+            self.players.forEach((player, _id) => {
+                player.asset.destroy();
+            });
+            self.players.clear();
+        });
+
         this.socket.on('spawnCar', (id, x, y, angle) => {
             let asset = self.add.image(
                 tileWidth*x + xCenterOffset, 
