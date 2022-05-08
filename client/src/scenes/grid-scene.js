@@ -24,8 +24,8 @@ export default class GridScene extends Phaser.Scene {
     }
     
     create() {
-        const map = this.make.tilemap({ key: 'map', tileWidth: 32, tileHeight: 32 });
-        const tileset = map.addTilesetImage('tiles', null, 32, 32, 1, 2);
+        const map = this.make.tilemap({ key: 'map', tileWidth: tileWidth, tileHeight: tileHeight });
+        const tileset = map.addTilesetImage('tiles', null, tileWidth, tileHeight, 1, 2);
         const layer = map.createLayer(0, tileset, 0, 0);
 
         this.players = new Map();
