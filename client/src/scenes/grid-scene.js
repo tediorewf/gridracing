@@ -78,7 +78,7 @@ export default class GridScene extends Phaser.Scene {
         });
   
         // Left
-        this.input.keyboard.on('keydown-A', (event) => {
+        this.input.keyboard.on('keydown-A', (_event) => {
             let player = self.me;
             let tile = layer.getTileAtWorldXY(player.asset.x - tileWidth, player.asset.y, true)
     
@@ -92,7 +92,7 @@ export default class GridScene extends Phaser.Scene {
         });
     
         // Right
-        this.input.keyboard.on('keydown-D', (event) => {
+        this.input.keyboard.on('keydown-D', (_event) => {
             let player = self.me;
             let tile = layer.getTileAtWorldXY(player.asset.x + tileWidth, player.asset.y, true)
     
@@ -106,7 +106,7 @@ export default class GridScene extends Phaser.Scene {
         });
     
         // Up
-        this.input.keyboard.on('keydown-W', (event) => {
+        this.input.keyboard.on('keydown-W', (_event) => {
             let player = self.me;
             let tile = layer.getTileAtWorldXY(player.asset.x, player.asset.y - tileHeight, true)
     
@@ -120,7 +120,7 @@ export default class GridScene extends Phaser.Scene {
         });
     
         // Down
-        this.input.keyboard.on('keydown-S', (event) => {
+        this.input.keyboard.on('keydown-S', (_event) => {
             let player = self.me;
             let tile = layer.getTileAtWorldXY(player.asset.x, player.asset.y + tileHeight, true)
     
